@@ -1,0 +1,17 @@
+welcome: "Welcome to RPS PLUS!"
+valid_name: "Enter a valid name."
+valid_choice: "That's not a valid choice."
+tutorial: |
+  How to play RPS PLUS!
+      Rock     > Scissors & Lizard
+      Paper    > Rock & Spock
+      Scissors > Paper & Lizard
+      Spock    > Rock & Scissors
+      Lizard   > Paper & Spock
+choices_prompt: |
+  Pick your weapon:
+      'r' for rock
+      'p' for paper
+      's' for scissors
+      'sp' for spock
+      'l' for lizard"
