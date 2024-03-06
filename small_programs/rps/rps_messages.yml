@@ -1,6 +1,7 @@
 welcome: "Welcome to RPS PLUS!"
 valid_name: "Enter a valid name."
 valid_choice: "That's not a valid choice."
+play_again: "Would you like to play again?(Enter 'y' to play again 'n' to exit.)"
 tutorial: |
   How to play RPS PLUS!
       Rock     > Scissors & Lizard
@@ -15,3 +16,4 @@ choices_prompt: |
       's' for scissors
       'sp' for spock
       'l' for lizard"
+

@@ -33,6 +33,10 @@ def winner(player, computer)
   end
 end
 
+def valid_input(input)
+  input == 'y' || input == 'n'
+end
+
 valid_choices = { 'r' => 'rock',
                   'p' => 'paper',
                   's' => 'scissors',
@@ -50,10 +54,10 @@ loop do
 end
 
 loop do
-  prompt(MESSAGES['tutorial'])
   player_score = 0
   computer_score = 0
-  loop do
+  until player_score == 3 || computer_score == 3
+    prompt(MESSAGES['tutorial'])
     choice = ''
     loop do
       prompt(MESSAGES['choices_prompt'])
@@ -72,11 +76,15 @@ loop do
     end
     prompt("#{player_score} : #{computer_score}")
     winner(player_score, computer_score)
-    break if player_score == 3 || computer_score == 3
   end
-  prompt("Would you like to play again?(Enter 'y' to play again.)")
-  user_input = Kernel.gets().chomp().downcase()
-  break unless user_input.include?('y')
+  user_input = ''
+  loop do
+    prompt(MESSAGES['play_again'])
+    user_input = Kernel.gets().chomp().downcase()
+    break if valid_input(user_input)
+    prompt(MESSAGES['valid_choice'])
+  end
+  break if user_input.include?('n')
 end
 
 prompt("Thank you for playing #{name}. Good bye!")
